@@ -1,6 +1,6 @@
 # Rapport de projet — Prévision de la consommation électrique sur Azure
 
-## 1. Architecture globale — Phase 2
+## 1. Architecture globale 
 
 ```text
 PJME_hourly.csv (conteneur source)
@@ -72,7 +72,7 @@ Le composant Split Data sépare les données en 80 % pour l’entraînement et 2
 
 *Figure 5 — Séparation des données train/test*
 
-## 7. Entraînement et prédiction
+## 7. Entrainement et prédiction
 
 Linear Regression définit l’algorithme. Train Model apprend les coefficients à partir des données d’entraînement, avec PJME_MW comme cible. Score Model applique le modèle aux données de test. Evaluate Model calcule les métriques de régression.
 
@@ -134,7 +134,7 @@ Le Designer a généré un pipeline Real-time inference à partir du pipeline d�
 
 Le composant Evaluate Model reste visible dans le brouillon d’inférence et doit être retiré pour une prédiction sans cible connue. Le déploiement et le test d’un endpoint ne sont pas démontrés par les captures.
 
-## 11. Limites, sécurité et améliorations
+## 11. Limites, sécurité et ameliorations
 
 - Vérifier que l’interpolation ne transmet pas d’informations futures au jeu d’entraînement et exclure les cibles imputées de l’évaluation réelle.
 - Pour une prévision future, fournir l’historique nécessaire aux lags et à la moyenne mobile, ou calculer ces variables en amont. Une date seule ne suffit pas au modèle actuel.
@@ -143,4 +143,4 @@ Le composant Evaluate Model reste visible dans le brouillon d’inférence et do
 
 ## 12. Conclusion
 
-Le projet met en œuvre une chaîne de traitement sur Azure, depuis l’ingestion des données jusqu’à l’entraînement, l’évaluation et l’enregistrement d’un modèle de régression linéaire. L’exécution d’entraînement est terminée et le pipeline d’inférence a été créé. La validation de l’inférence sur des données futures et son déploiement restent les prochaines étapes.
+Le projet met en œuvre une chaîne de traitement sur Azure, depuis l’ingestion des données jusqu’a l’entrainement, l’évaluation et l’enregistrement d’un modèle de régression linéaire. L’exécution d’entraînement est terminée et le pipeline d’inférence a été créé. La validation de l’inférence sur des données futures et son déploiement restent les prochaines étapes.
